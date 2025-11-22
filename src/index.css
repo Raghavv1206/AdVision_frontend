@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   🌌 ADVISION CUSTOM SCROLLBAR THEME
+   ============================================================ */
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(22, 17, 29, 0.7);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3a3440 0%, #a88fd8 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(22, 17, 29, 0.7);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a88fd8 0%, #c9b6ee 100%);
+  box-shadow: 0 0 10px rgba(168, 143, 216, 0.6);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a88fd8 rgba(22, 17, 29, 0.7);
+}
+
+/* ============================================================
+   📅 DATE INPUT STYLING
+   ============================================================ */
+
+/* Make calendar icon white */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Date text fields (Chrome) */
+::-webkit-datetime-edit {
+  color: white;
+}
+
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field {
+  padding: 0 2px;
+}
+
+/* Popup calendar hover */
+::-webkit-calendar-picker-indicator:hover {
+  filter: brightness(1.4);
+}
+
+/* Enable dark-mode date picker */
+.custom-date {
+  color-scheme: dark;
+}
+
+/* Fix iOS Safari date picker text visibility */
+input[type="date"] {
+  color: white;
+}
+
+/* ============================================================
+   🎨 OPTIONAL: GLOBAL SMOOTH TRANSITIONS
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+input,
+select,
+textarea {
+  transition: background-color 0.25s ease, border-color 0.25s ease,
+    color 0.25s ease, box-shadow 0.25s ease;
+}
+.custom-date::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+}
